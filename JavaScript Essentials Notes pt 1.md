@@ -5,7 +5,7 @@
 Variables are the first building block you of most coding languages. In javascript, they are assined by:
 
 ```javascript
-firstname = 'John';
+firstname = "John";
 x = 2;
 ```
 
@@ -21,7 +21,7 @@ There are 3 ways to declare variables:
 
 Once a variable is declared, you can refer to it using the name of the existing variable, which can be used for replacing values or for calling the value.
 
-A variable defined in a script is called *hard-coded*, becuase the variable isn't defined dynamically from some external source.
+A variable defined in a script is called _hard-coded_, becuase the variable isn't defined dynamically from some external source.
 
 A variable definition consists of three parts in javascript:
 
@@ -44,9 +44,9 @@ variable names start with a lowercase letter and they should be descriptive to m
 
 variable names cannot container spaces, but they can use underscores.
 
- A common convention is to use camel case, where you start with a lowercase word, but then capitalize the first word in every new word after the first word
+A common convention is to use camel case, where you start with a lowercase word, but then capitalize the first word in every new word after the first word
 
- another is snake case, where you make all words lowercase, but connect them with underscores or hyphens.
+another is snake case, where you make all words lowercase, but connect them with underscores or hyphens.
 
 ### Data Types
 
@@ -56,13 +56,13 @@ JavaScript is a loosely typed language, so that means that Javascript determines
 
 There are two data categories of data types, primative and complex. There are seven primative data types:
 
-- String: used to store text values. Declared similarly to python, except you can use backticks to make strings that can reference variables -- `let's learn ${language}`.  Strings also  use the backslash to escape special characters to get their text representation.
+- String: used to store text values. Declared similarly to python, except you can use backticks to make strings that can reference variables -- `let's learn ${language}`. Strings also use the backslash to escape special characters to get their text representation.
 - Number: used to represent numbers, real and integer. These are a 64-bit floating point number. This data type can also hold hexadecimal numeric values, decimal values, and binary numbers.
-- BigInt: has a limit between 2^53 -1 and -(2^53 -1). You cannot perform operations between a number and a bigInt value; only operations between BigInts and between Numbers are possible.
-- Boolean: holds two values true or false. 
+- BigInt: has a limit between 2^53 -1 and -(2^53 -1). You cannot perform operations between a number and a bigInt value; only operations between BigInts and between Numbers are possible. BigInts are specified by ending the value in the declaration statement with an `n`.
+- Boolean: holds two values true or false.
 - Symbol: used when its important to represent data as variables that are different, even if they hold the exact same value. This is like for records in a database. Even if two records are the same, that doesn't necessarily mean that they should be seen as the exact same value. These symbols can be handy as properties of objects.
-- undefined: this is a data type for a variable that has not be assigned a value, do this by defining a variable with a name but without a value `let x`.  You could also purposefully assign this variable the undefined value, but that's a bad practice to do, especially when you are trying to check the value of a variable to see if its the same as the value of another variable. if you assign something as undefined, and the other value is undefined, the program will show these values as equal, and not as both undefined. This is because an automatically undefined variable, and a manually undefined variable are seen as the same value.
-- null: This is a special value for saying that a variable is empty or has an unknown value, which solves the equality problem from assigning a variable as undefined.  Use `let x = null;` instead. An undefined variable is not considered the same as a null variable.
+- undefined: this is a data type for a variable that has not be assigned a value, do this by defining a variable with a name but without a value `let x`. You could also purposefully assign this variable the undefined value, but that's a bad practice to do, especially when you are trying to check the value of a variable to see if its the same as the value of another variable. if you assign something as undefined, and the other value is undefined, the program will show these values as equal, and not as both undefined. This is because an automatically undefined variable, and a manually undefined variable are seen as the same value.
+- null: This is a special value for saying that a variable is empty or has an unknown value, which solves the equality problem from assigning a variable as undefined. Use `let x = null;` instead. An undefined variable is not considered the same as a null variable.
 
 ### Modifying and Analyzing Data Types
 
@@ -72,8 +72,8 @@ Another one is `typeof` which returns the type of the variable. This can be call
 
 - `typeof variable2;`
 - `typeof(variable2);`
-  
-  Technically, typeof is an operator, not a method, unlike console.log, but sometimes using brackets can make your code more readable. 
+
+  Technically, typeof is an operator, not a method, unlike console.log, but sometimes using brackets can make your code more readable.
 
   Note that null actually returns an object and not a type when you call typeof on a null variable. It will return `unknown object` instead of a type.
 
@@ -94,7 +94,7 @@ These work pretty much the same as python, except for the ++ and -- I think.
 For logical operators:
 
 - && : and
-- || : or 
+- || : or
 - != : not
 
 ## Chapter 3: Multiple Values
@@ -134,9 +134,9 @@ If you define an array as a const, you can change the individual values of the a
 
 You can access elements of an array using the index with square brackets, like python. You can overwrite the element at a specific index by: `arr[3] = 4;`.
 
-Note that if you try to overwrite an array element at an index that doesn't exist, JavaScript will make that element for you instead of throwing an exception. 
+Note that if you try to overwrite an array element at an index that doesn't exist, JavaScript will make that element for you instead of throwing an exception.
 
-Arrays have a built in length method/property, that can be accessed with `arr.length`. This returns the number of values the array has. Note that the length will always be one higher than the index, because the index starts at zero, but counting non-empty array values starts at 1. 
+Arrays have a built in length method/property, that can be accessed with `arr.length`. This returns the number of values the array has. Note that the length will always be one higher than the index, because the index starts at zero, but counting non-empty array values starts at 1.
 
 ### Array Methods
 
@@ -147,14 +147,56 @@ Arrays come with a few methods built in like the length property:
   - starting index: the index to start added in elements
   - deleted elements: the number of elements to delete starting at the starting index. If you make this value higher than the number of elements, JavaScript will simply stop as soon as it runs out of values to delete.
   - inserted value: the value or values to be inserted into the array at the starting index.
-- concat(): concatenates two arrays together, but also can add single values to an array as well. 
+- concat(): concatenates two arrays together, but also can add single values to an array as well.
 - pop(): removes the last element from the array.
-- shift(): removes the first element from the array, shifting all other indices down one. 
+- shift(): removes the first element from the array, shifting all other indices down one.
 - splice() (again): you can also use the first two parameters of splice to just delete elements from theh array at any index, which is useful. It doesn't require you to add anything into the array.
-- delete: use this to make a value in the array undefined, but not to remove the index from the array. 
+- delete: use this to make a value in the array undefined, but not to remove the index from the array.
 - Find(): this is an-inline search function that you can use to search an array.
   - example: `arr9.find(function(e) {return e === 6});`.
 - indexOf(): finds the index of a specified value in the array. If the value is not found, -1 is returned.
 - sort(): you can call sort on an array to change it to a sorted order: `arr9.sort()`.
 - reverse(): reverses the order of the array.
-- 
+
+## Operator Precedence
+
+In javascript there's an order to how operators are executed in formulas, just like there's an order to the mathematical operations:
+
+- grouping is handled first
+- exponentiation
+- prefix increment and decrement
+- multiplication, division, and modulus operators
+- addition and subtraction
+
+postfix increment and decrement operators are handled after the formula is executed, and so may not have an effect on the formula itself.
+
+## Alternative Assignment Operators
+
+JavaScript allows for the ability to combine assignment and an operator with the following operators:
+
+- x += 5; this equals x = x + 5.
+- x -= 5; this equals x = x - 5.
+- x \-= 5; this equals x = x \- 5.
+- x /= 5; this equals x = x / 5.
+- x \*\*=5; this equals x = x ^ 5.
+- x %= 5; this equals x = x mod 5.
+
+## Comparison Operators
+
+### Equal
+
+There are two equality operators, one that compares just values and one that compares values and data types. The first is loose equality, and the second is strict equality, `==` and `===`, respectively.
+
+### Not Equal
+
+There are two not equal operators, one that does loose inequality, and one that strict inequality: `!=` and `!==`, respectively.
+
+### Greater Than and less Than (and Equal)
+
+as usual: >, >=, <, <=.
+
+### Logical Operators
+
+- And: &&
+- Or: ||
+- Not: !x
