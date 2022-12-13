@@ -49,3 +49,9 @@ If you use `console.dir(document)` you can see the document object that represen
 The next chapter will focus on traversing the DOM, finding elements in the DOM, and manipulating the DOM. The code we will be writing there will look like real projects.
 
 In order to work with elements on the page, you'll first have to find them in the DOM. To select page elements to use in your code and to manipulate the elmeents, you can use either the `querySelector()` or `querySelectorAll()` method. Both of these can be used to selelct page elements either by tag name, ID, or Class.
+
+The `querySelector()` method will return the first element within the document that matches the specified selectors. The `querySelectorAll()` method will return all the elements matching a query.
+
+The `querySelectorAll()` method will return all the elements in a static NodeList, which represents a list of the document's elements that match the specified group of selectors.
+
+After selecting you can start using the dynamic features of the DOM; you can manipulate the elements using JavaScript. Content can be changed in the same way a variable's contents can be, elements can be removed or added, and styles can be adjusted. This can all be done with JavaScript and the way the user interacts with the page can affect this.
