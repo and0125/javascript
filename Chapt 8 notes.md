@@ -161,3 +161,12 @@ There are methods to check what letters a string starts or ends with, called `st
 
 ## Number Methods
 
+To check if something is not a number, use the `isNaN()` method. This returns a boolean value, true if the input is not a number, and false if the input is a number. Usually, you may want to negate this function to get the opposite results; you can do this with `!isNaN(x)` as a condition.
+
+However, a number in quotations will still be considered a number when evaluated with this function.
+
+To check if something is finite, use the `isFinite()` method. This returns a boolean value, false for NaN, Infinity, and undefined, and true for all other values.
+
+To check if an variable is an integer, use the `isInteger()` method. This returns a boolean value, true if the input is an integer, false if the input is not an integer.
+
+To specify a number of decimal places, use the `toFixed()` method. This takes in an integer which is the number of decimal places to print. Also, this doesn't change the original value.
