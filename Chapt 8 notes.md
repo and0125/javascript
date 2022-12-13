@@ -170,3 +170,42 @@ To check if something is finite, use the `isFinite()` method. This returns a boo
 To check if an variable is an integer, use the `isInteger()` method. This returns a boolean value, true if the input is an integer, false if the input is not an integer.
 
 To specify a number of decimal places, use the `toFixed()` method. This takes in an integer which is the number of decimal places to print. Also, this doesn't change the original value.
+
+In addition, you can use the `toPrecision()` method to specify the precision of certain numbers. THis specifies the total number of decimal places returned, even those before the decimal. You pass in the number of decimal places desired, and the number is truncated to what is specified.
+
+## Math Methods
+
+There are build in `max()` and `min()` methods. These find the max or min in a given number of arguments.
+This does not work for an array of numbers, but simply comma-separated numbers passed into the function. When strings are passed into these functions, they return NaN because JavaScript is unsure how to evaluate numbers and strings together.
+
+To do the square root of a number, there's the `sqrt()` method. As a complementary function, there is also the `pow()` method which allows you to raise a number to a specific exponent `pow(base, exponent)`.
+so 5^3 would be calculated as `pow(5,3)`.
+
+To turn decimals into integers, you can use the `round()` method. This will round up when the decimal is greater than .5 and down when the decimal is less than .5. There are also ceiling and floor methods, `ceil()` and `floor()`. There is also a truncation method that just returns the part of the float number before the decimal point, `trunc()`.
+
+There are also exponential and logarithmic methods, `exp()` and `log()` respectively. The exponential function retruns the number to which `e` must be raised to return the input value.The logarithmic function calculates the natural logarithm (base `e`) of the input value.
+
+## Date Methods
+
+There is a built-in Date object in javascript, and it contains a lot of built in functions to work with Dates. To create a new Date object:
+
+```javascript
+let current = new Date(); // gets the current date and time
+let current2 = Date.now(); // also gets the current date and time, but this is the time in seconds since January 1, 1970.
+```
+
+JavaScript can also process date formats given as strings into date objects when given as input to the Date() method:
+
+```javascript
+let date = new Date("Sat Jun 05 2022 12:40:12 GMT+0200"); // one way to specify an exact date
+let date2 = new Date(2021, 06, 05, 12, 10, 15, 100); // another way to specify an exact date, which goes
+// year, month, day, hour, minute, second, millisecond
+```
+
+The month in the second method above is zero-indexed, so January is month 0 and December is 11.
+
+There are get and set methods for each attribute of the date object, but note that the original date instance gets changed by these set methods, and a copy is not made.
+
+To parse dates from a string, use the `Date.parse()` method. This accepts several different date formats. It will not add any values to these dates; for instance if the time is not specified, those attributes will be added as zeros. The returned date from this method will be the epoch time, the amount of time from January 1st, 1970, and not a formatted date object.
+
+There are two methods for returning strings from dates, `toDateString()` and `toLocaleDateString()`. The first method returns the condensed representation of a date `Sat Jun 05 2021`, while the second returns the slash separated string `6/5/2021`.
