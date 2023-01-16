@@ -1,0 +1,24 @@
+/* Used the following two commands in the inspector panel console to query the
+html: 1) document.querySelector(".same"): queries for the first element of the
+class "same" 2) console.log(document.querySelector(".same")): queries for the
+first element and prints the element to the console log. */
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 10-5</title>
+  </head>
+  <body>
+    <p class="same">This</p>
+    <p class="same">Is</p>
+    <div class="same">The</div>
+    <p class="same">Same</p>
+    <div class="same">Class</div>
+  </body>
+  <script>
+    nodeList = document.querySelectorAll(".same");
+    for (var i = 0; i < nodeList.length; i++) {
+      console.log(nodeList[i]);
+    }
+  </script>
+</html>
