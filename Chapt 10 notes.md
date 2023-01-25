@@ -176,3 +176,87 @@ including this in a script block in an HTML file will allow you to:
 - Add "hide" to the class list.
 
 Adding "hide" to the class list then alters which CSS layout applies to the element (see the example code on pg. 244), which will cause the altered elements to disappear.
+
+### Removing Classes From Elements
+
+Similar syntax to adding:
+
+```javascript
+function change() {
+  document.getElementById("shape").classList.remove("hide");
+}
+```
+
+an `onclick` attribute in the html will trigger this function to change the class by removing the class `hide`.
+
+As a side note, it seems that you can refer to classes in the html document with the dot operator in the css style tags. That is, if you have a `div` with the class `square blue` it gets referenced as `.square.blue` in the css style tag (see page 245 for this example). This is a way to point at two different classes, so that you only affect the elements with both classes, instead of html elements with the `square` class and the `blue` class.
+
+### Toggling Classes
+
+Sometimes you want to add a class when its not present, or remove a class that is present. This is called toggling, there is a special method to toggle classes.
+
+This method is referenced with similar syntax:
+
+```javascript
+function changeVisibility() {
+  document.getElementById("shape").classList.toggle("hide");
+}
+```
+
+You can reference this in an `onclick` attribute so that the visibility is adjusted everytime a button or another html element is clicked.
+
+## Manipulating Attributes
+
+You can also set attributes for html elements directly using the `setAttribute` method.
+
+```javascript
+let el = document.getElementById("shape");
+el.setAttribute("style", "background-color:red");
+```
+
+This can be useful for things like creating images.
+
+Note that javascript interacts with the DOM, and not the HTML file, therefore the DOM is what is being changed, the rendering, and not the file itself. So if you change a class and then call a method again that looks for a specific class that no longer exists in the DOM, the method will not function.
+
+## Event Listeners on elements
+
+Events are things that happen on a web page, one of which is the `onclick` event.
+
+There is a way to register event listeners using Javascript as well, instead of using the HTML attribute.
+
+This is done by retrieving the document element you want to add an event to, and then adding the event and function to the `addEventListener` method:
+
+```javascript
+document.getElementById("shape").addEventListener("click", changeColor);
+
+//assumption is that the changeColor function is defined elsewhere.
+```
+
+There's a special way to trigger events to occur when the window loads:
+
+```javascript
+window.onload = function () {
+  //whatever needs to happen after loading, to include adding event listeners to elements.
+};
+```
+
+As a note there are many other event types that can be used like:
+
+- focus
+- blur
+- focusin
+- focusout
+- mouseout
+- mouseover
+- keydown
+- keypress
+- keyup
+
+## Creating New Elements
+
+Creating a new element and adding it to the DOM requires two steps:
+
+- creating the new element: `let el = document.createElement("p");`
+- adding it to the DOM: `document.body.appendChild(el);`
+
+

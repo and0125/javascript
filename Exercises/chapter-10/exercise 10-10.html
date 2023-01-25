@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Exercise 10-10</title>
+  </head>
+  <body>
+    <div>
+        <div id="message">Complete Javascript Course</div>
+        <div>
+            <input type="text" id="addItem">
+            <input type="button" id="addNew" value="Add New To List">
+    </div>
+    <div id="output">
+        <h1>Shopping List</h1>
+        <ol id="sList"> </ol>
+    </div>
+    <script>
+        document.getElementById("addNew").onclick = function () {
+            addOne();
+        }
+        function addOne() {
+            var a = document.getElementById("addItem").value; // grabs the input value 
+            var li = document.createElement("li"); // creates the li element for the list
+            li.appendChild(document.createTextNode(a)); // adds the value as text to the li element
+            document.getElementById("sList").appendChild(li);  // adds the li element to the list 
+        }
+    </script>
+  </body>
+</html>
